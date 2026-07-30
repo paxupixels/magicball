@@ -3,7 +3,16 @@
 	import favicon from '$lib/assets/favicon.svg';
 
 	let { children } = $props();
+
+	import Footer from '$lib/Footer.svelte';
 </script>
 
 <svelte:head><link rel="icon" href={favicon} /></svelte:head>
-{@render children()}
+
+<div class="flex h-screen w-screen flex-col justify-center">
+	<div class="flex-1">
+		{@render children()}
+	</div>
+
+	<Footer />
+</div>
