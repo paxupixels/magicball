@@ -4,6 +4,7 @@
 	import Button from '$lib/Button.svelte';
 	import Answer from '$lib/Answer.svelte';
 
+
 	import { giveRandomAnswer } from '$lib/randomAnswer';
 	let answer = $state();
 	let question = $state('');
@@ -19,12 +20,26 @@
 		}, 0.7 * 3 * 1000);
 	}
 
+	// Text Animation
+	let answerShown = $state(false);
+
+	function answerAnimation() {
+		answerShown = true;
+		setTimeout(() => {
+			answerShown = false;
+		}, 0.7 * 3 * 1000);
+	}
+
 </script>
 
 <!-- TODO: Responsive machen für large screens -->
 <div class="flex h-full flex-col items-center justify-center gap-6">
 	<!-- Hauptcontainer -->
-	<Answer {answer} />
+	<div class="min-h-8">
+		{#if answerShown}
+			<Answer {answer}/>
+		{/if}
+	</div>
 	<Ball bind:isSpinning={isSpinning} />
 	<div class="flex w-full flex-col items-center justify-center gap-6 px-12">
 		<TextFieldInput bind:value={question} />
@@ -34,6 +49,7 @@
 				answer = giveRandomAnswer();
 				question = '';
 				ballAnimation();
+				answerAnimation();
 			}}
 		/>
 	</div>
