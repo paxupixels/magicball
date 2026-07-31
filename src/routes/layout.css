@@ -4,3 +4,25 @@ html,
 body {
 	font-family: Verdana;
 }
+
+.ball-anim {
+	animation: ball 0.7s linear 3;
+}
+
+@keyframes ball {
+	0% {
+		transform:  rotate(360deg) scale(100%);
+	}
+	25% {
+		transform:  rotate(270deg) scale(60%);
+	}
+	50% {
+		transform: rotate(180deg) scale(50%);
+	}
+	75% {
+		transform: rotate(90deg) scale(60%);
+	}
+	100% {
+		transform: rotate(0deg) scale(100%);
+	}
+}
