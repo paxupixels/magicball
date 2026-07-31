@@ -7,7 +7,10 @@
 	import Footer from '$lib/Footer.svelte';
 </script>
 
-<svelte:head><link rel="icon" href={favicon} /></svelte:head>
+<svelte:head>
+	<link rel="icon" href={favicon} />
+	<title>Magic Ball</title>
+</svelte:head>
 
 <div class="flex h-screen w-screen flex-col justify-center">
 	<div class="flex-1">
