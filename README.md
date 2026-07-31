@@ -1,11 +1,11 @@
-## Magic Ball
+# Magic Ball
 
 Stelle eine Frage und bekomme eine Antwort zurück.. der Ball entscheidet über dein Schicksal.
 
-# Features
+## Features
 - Frage eingeben -> Antwort bekommen
 
-# Tech-Stack
+## Tech-Stack
 - Svelte
 - TypeScript
 - Vite
